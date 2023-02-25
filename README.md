@@ -1,3 +1,1 @@
-# foloinfo.github.io
-
-Hello World!
+folo.info
