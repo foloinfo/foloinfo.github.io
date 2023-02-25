@@ -13,9 +13,17 @@ export default function Home(props) {
 
   const title = data.post.title
   const content = data.post.body
+  const date = data.post.date
+
   return (
     <Layout>
       <h1>{title}</h1>
+      <div style={{
+        textAlign: 'right',
+        color: '#454545',
+        fontSize: '0.9rem',
+        marginRight: '0.5rem',
+      }}>{date}</div>
       <div>
         <TinaMarkdown content={content} />
       </div>

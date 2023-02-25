@@ -36,15 +36,18 @@ const schema = defineSchema({
           name: "title",
         },
         {
-          // type: "string",
           type: "rich-text",
           label: "Blog Post Body",
           name: "body",
           isBody: true,
-          ui: {
-            component: "textarea",
-          },
+          // type: "string",
+          // ui: { component: "textarea", },
         },
+        {
+          type: "datetime",
+          name: "date",
+          label: "Date",
+        }
       ],
       ui: {
         router: ({ document }) => {
