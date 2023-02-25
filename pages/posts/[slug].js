@@ -16,7 +16,9 @@ export default function Home(props) {
   return (
     <Layout>
       <h1>{title}</h1>
-      <TinaMarkdown content={content} />
+      <div>
+        <TinaMarkdown content={content} />
+      </div>
     </Layout>
   );
 }

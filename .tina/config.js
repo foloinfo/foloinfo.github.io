@@ -24,6 +24,7 @@ const schema = defineSchema({
         },
       },
     },
+
     {
       label: "Blog Posts",
       name: "post",
@@ -35,7 +36,8 @@ const schema = defineSchema({
           name: "title",
         },
         {
-          type: "string",
+          // type: "string",
+          type: "rich-text",
           label: "Blog Post Body",
           name: "body",
           isBody: true,

@@ -22,7 +22,19 @@ export const Layout = (props) => {
           <a>Posts</a>
         </Link>
       </header>
-      <main>{props.children}</main>
+      <main>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+        }}>
+          <div style={{
+            maxWidth: '800px',
+            width: '-webkit-fill-available',
+          }}>
+            {props.children}
+          </div>
+        </div>
+      </main>
     </div>
   )
 }
