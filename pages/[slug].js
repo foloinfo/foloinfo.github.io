@@ -19,8 +19,18 @@ export default function Home(props) {
   );
 }
 
-// This is an example of a page generated with Serverside Rendering.
-// This can be switched to a static page by using getStaticProps
+export const getStaticPaths = async () => {
+  const { data } = await client.queries.pageConnection();
+  const paths = data.pageConnection.edges.map((x) => {
+    return { params: { slug: x.node._sys.filename } };
+  });
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+};
+
 export const getStaticProps = async ({ params }) => {
   const { data, query, variables } = await client.queries.page({
     relativePath: `${params.slug}.mdx`,
