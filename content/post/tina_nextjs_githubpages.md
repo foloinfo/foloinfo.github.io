@@ -4,7 +4,8 @@ date: '2023-02-24T15:00:00.000Z'
 ---
 
 Make a tina project for github pages.
-Repository should name like `foloinfo.github.io`, use your account name.
+
+Repository should name like `foloinfo.github.io`, use your account name.\
 Using the tina project name same as the repository name maybe a good idea.
 
 ```
@@ -28,6 +29,7 @@ Follow the steps on [Moving from Local-Mode to Prod-Mode | TinaCMS Docs](https:/
 6. `NEXT_PUBLIC_TINA_BRANCH=main` if not
 
 Next, you need to setup Github Actions, maybe now it's a good time to commit & push to remote.
+
 Reference the official documentation here: [Connecting the site | TinaCMS Docs](https://tina.io/docs/tina-cloud/connecting-site/#option-github-pages)
 
 1. Open your github pages repository settings page (`https://github.com/foloinfo/foloinfo.github.io/settings` for me)
@@ -36,11 +38,14 @@ Reference the official documentation here: [Connecting the site | TinaCMS Docs](
 4. Open `Secrets and variables` and choose `Actions`
 5. Set `NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`, `NEXT_PUBLIC_TINA_BRANCH`
 
-In the official documentation, it uses environment variables like `TINA_PUBLIC_CLIENT_ID`.
+In the official documentation, it uses environment variables like `TINA_PUBLIC_CLIENT_ID`.\
 I changed those to `NEXT_PUBLIC_TINA_CLIENT_ID` to keep it consistent.
-Here is the code for yml file for the github actions. [foloinfo.github.io/nextjs\_tina.yml at main · foloinfo/foloinfo.github.io](https://github.com/foloinfo/foloinfo.github.io/blob/main/.github/workflows/nextjs_tina.yml#L76)
+
+Here is the code for yml file for the github actions.\
+[foloinfo.github.io/nextjs\_tina.yml at main · foloinfo/foloinfo.github.io](https://github.com/foloinfo/foloinfo.github.io/blob/main/.github/workflows/nextjs_tina.yml#L76)
 
 Next, you need to modify tina project code to run `yarn next export`, since tina's default example uses `getServerSideProps` and it's not comatible with static site export.
+
 You need to change it to `getStaticProps` and `getStaticPaths`.
 
 `/pages/[slug].js`
@@ -75,4 +80,5 @@ export const getStaticProps = async ({ params }) => {
 ```
 
 Now, you should be able to run `yarn build && yarn next export` in the local env.
+
 You can push to github with main branch and it should build & release your github pages.
