@@ -1,5 +1,6 @@
 ---
 title: Using tina with nextjs on github pages.
+date: '2023-02-24T15:00:00.000Z'
 ---
 
 Make a tina project for github pages.
@@ -23,7 +24,7 @@ Follow the steps on [Moving from Local-Mode to Prod-Mode | TinaCMS Docs](https:/
 2. Connect with github account
 3. Pick a github pages repository
 4. Copy your `Client ID` and paste to `.env` as `NEXT_PUBLIC_TINA_CLIENT_ID`
-5. Navigate to `Tokens` and create new token, copy&paste as `TINA_TOKEN`
+5. Navigate to `Tokens` and create new token, copy\&paste as `TINA_TOKEN`
 6. `NEXT_PUBLIC_TINA_BRANCH=main` if not
 
 Next, you need to setup Github Actions, maybe now it's a good time to commit & push to remote.
@@ -37,16 +38,15 @@ Reference the official documentation here: [Connecting the site | TinaCMS Docs](
 
 In the official documentation, it uses environment variables like `TINA_PUBLIC_CLIENT_ID`.
 I changed those to `NEXT_PUBLIC_TINA_CLIENT_ID` to keep it consistent.
-Here is the code for yml file for the github actions. [foloinfo.github.io/nextjs_tina.yml at main · foloinfo/foloinfo.github.io](https://github.com/foloinfo/foloinfo.github.io/blob/main/.github/workflows/nextjs_tina.yml#L76)
-
+Here is the code for yml file for the github actions. [foloinfo.github.io/nextjs\_tina.yml at main · foloinfo/foloinfo.github.io](https://github.com/foloinfo/foloinfo.github.io/blob/main/.github/workflows/nextjs_tina.yml#L76)
 
 Next, you need to modify tina project code to run `yarn next export`, since tina's default example uses `getServerSideProps` and it's not comatible with static site export.
 You need to change it to `getStaticProps` and `getStaticPaths`.
 
 `/pages/[slug].js`
-code: [foloinfo.github.io/[slug].js at main · foloinfo/foloinfo.github.io](https://github.com/foloinfo/foloinfo.github.io/blob/main/pages/%5Bslug%5D.js#L22)
+code: [foloinfo.github.io/\[slug\].js at main · foloinfo/foloinfo.github.io](https://github.com/foloinfo/foloinfo.github.io/blob/main/pages/%5Bslug%5D.js#L22)
 
-```
+```javascript
 export const getStaticPaths = async () => {
   const { data } = await client.queries.pageConnection();
   const paths = data.pageConnection.edges.map((x) => {
