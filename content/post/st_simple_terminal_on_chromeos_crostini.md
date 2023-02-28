@@ -26,7 +26,7 @@ x.c: 15: 10: fatal error: X11 / Xft / Xft.h: No such file or directory
 ```
 
 Default color scheme is a bit harsh on my eyes, so change theme. Skip if you don't want.
-ref: https://st.suckless.org/patches/solarized/
+ref: [https://st.suckless.org/patches/solarized/](https://st.suckless.org/patches/solarized/ "https://st.suckless.org/patches/solarized/")
 
 ```shell
 wget https://st.suckless.org/patches/solarized/st-no_bold_colors-20170623-b331da5.diff
