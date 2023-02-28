@@ -66,11 +66,11 @@ Icon=Terminal
 Categories=Terminal;
 ```
 
-Copy this file with `cp ./st.desktop /.local/share/applications/`, it should appear on the app list.
+Copy this file with `cp ./st.desktop /.local/share/applications/`, it should appear on the app list.\
 ref: [How do I add Linux apps to the home screen? - Google Pixelbook Community](https://support.google.com/pixelbook/thread/708306?hl=en\&msgid=715034)
 
-This is the repository with changes above: [https://github.com/foloinfo/st](https://github.com/foloinfo/st "https://github.com/foloinfo/st")
-I would recommend first clone from original repository.
+This is the repository with changes above: [https://github.com/foloinfo/st\
+](https://github.com/foloinfo/st)I would recommend first clone from original repository.
 
 Now I feel much snappy terminal on my mobile workspace. Like switching the tmux screen within few ms.&#x20;
 
