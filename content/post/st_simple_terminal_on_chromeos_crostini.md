@@ -26,7 +26,7 @@ x.c: 15: 10: fatal error: X11 / Xft / Xft.h: No such file or directory
 ```
 
 Default color scheme is a bit harsh on my eyes, so change theme. Skip if you don't want.
-ref: [https://st.suckless.org/patches/solarized/](https://st.suckless.org/patches/solarized/ "https://st.suckless.org/patches/solarized/")
+ref: [https://st.suckless.org/patches/solarized/](https://st.suckless.org/patches/solarized/)
 
 ```shell
 wget https://st.suckless.org/patches/solarized/st-no_bold_colors-20170623-b331da5.diff
@@ -53,7 +53,7 @@ st
 
 It's more convinient if you can directly launch st from the shelf of ChromeOS, so create an entry.
 
-```
+```text
 [Desktop Entry]
 Name=st
 Comment=Terminal Emulator
@@ -66,12 +66,13 @@ Icon=Terminal
 Categories=Terminal;
 ```
 
-Copy this file with `cp ./st.desktop /.local/share/applications/`, it should appear on the app list.\
+Copy this file with `cp ./st.desktop /.local/share/applications/`, it should appear on the app list.
 ref: [How do I add Linux apps to the home screen? - Google Pixelbook Community](https://support.google.com/pixelbook/thread/708306?hl=en\&msgid=715034)
 
-This is the repository with changes above: [https://github.com/foloinfo/st\
-](https://github.com/foloinfo/st)I would recommend first clone from original repository.
+This is the repository with changes above: [https://github.com/foloinfo/st](https://github.com/foloinfo/st)
 
-Now I feel much snappy terminal on my mobile workspace. Like switching the tmux screen within few ms.&#x20;
+I would recommend first clone from original repository.
+
+Now I feel much snappy terminal on my mobile workspace. Like switching the tmux screen within few ms.
 
 Happy coding! 🎉
