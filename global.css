@@ -3,7 +3,7 @@ pre {
   background-color: #efefef;
   padding: 1rem;
   border-radius: 5px;
-  overflow: hidden;
+  white-space: pre-wrap;
 }
 
 pre code {
@@ -15,7 +15,6 @@ code {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   border-radius: 3px;
-  overflow: hidden;
 }
 
 a {
