@@ -3,6 +3,7 @@ import { useTina } from "tinacms/dist/react";
 import { client } from "../../.tina/__generated__/client";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import DateLabel from "../../components/posts/DateLabel";
+import Head from 'next/head'
 
 export default function Home(props) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
@@ -15,14 +16,21 @@ export default function Home(props) {
   const title = data.post.title
   const content = data.post.body
   const datetime = data.post.date
+  const firstBlock = content.children[0].children[0].text
 
   return (
     <Layout>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={`${title} --- ${firstBlock}`} />
+      </Head>
       <h1>{title}</h1>
       <DateLabel datetime={data.post.date} />
-      <div>
-        <TinaMarkdown content={content} />
-      </div>
+      <article>
+        <div>
+          <TinaMarkdown content={content} />
+        </div>
+      </article>
     </Layout>
   );
 }

@@ -3,6 +3,7 @@ import { Layout } from "../components/Layout";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../.tina/__generated__/client";
 import PostLinks from '../components/posts/Links'
+import Head from 'next/head'
 
 export default function Home(props) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
@@ -21,6 +22,10 @@ export default function Home(props) {
   const content = data.page.body;
   return (
     <Layout>
+      <Head>
+        <title>folo.info</title>
+        <meta name="description" content="folo.info blog" />
+      </Head>
       <TinaMarkdown content={content} />
       <PostLinks posts={postData.postConnection.edges} />
     </Layout>
