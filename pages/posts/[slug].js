@@ -23,6 +23,8 @@ export default function Home(props) {
       <Head>
         <title>{title}</title>
         <meta name="description" content={`${title} --- ${firstBlock}`} />
+        <meta name="og:title" content={title} />
+        <meta name="og:description" content={firstBlock} />
       </Head>
       <h1>{title}</h1>
       <DateLabel datetime={data.post.date} />
