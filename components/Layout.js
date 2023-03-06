@@ -5,7 +5,7 @@ export const Layout = (props) => {
   return (
     <div
       style={{
-        margin: '3rem',
+        margin: '5vw',
       }}
     >
       <Head>

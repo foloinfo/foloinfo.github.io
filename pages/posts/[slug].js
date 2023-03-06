@@ -23,8 +23,10 @@ export default function Home(props) {
       <Head>
         <title>{title}</title>
         <meta name="description" content={`${title} --- ${firstBlock}`} />
-        <meta name="og:title" content={title} />
-        <meta name="og:description" content={firstBlock} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={firstBlock} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@foloinfo" />
       </Head>
       <h1>{title}</h1>
       <DateLabel datetime={data.post.date} />
