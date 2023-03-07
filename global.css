@@ -1,0 +1,28 @@
+
+pre {
+  background-color: #efefef;
+  padding: 1rem;
+  border-radius: 5px;
+  white-space: pre-wrap;
+}
+
+pre code {
+  padding: 0;
+}
+
+code {
+  background-color: #efefef;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 3px;
+  word-wrap: break-word;
+}
+
+article {
+  word-wrap: break-word;
+}
+
+a {
+  color: #0084ff;
+}
+

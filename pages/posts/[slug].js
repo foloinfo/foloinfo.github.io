@@ -1,6 +1,9 @@
 import { Layout } from "../../components/Layout";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../../.tina/__generated__/client";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import DateLabel from "../../components/posts/DateLabel";
+import Head from 'next/head'
 
 export default function Home(props) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
@@ -10,17 +13,29 @@ export default function Home(props) {
     data: props.data,
   });
 
+  const title = data.post.title
+  const content = data.post.body
+  const datetime = data.post.date
+  const firstBlock = content.children[0].children[0].text
+
   return (
     <Layout>
-      <code>
-        <pre
-          style={{
-            backgroundColor: "lightgray",
-          }}
-        >
-          {JSON.stringify(data.post, null, 2)}
-        </pre>
-      </code>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={`${title} --- ${firstBlock}`} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={firstBlock} />
+        <meta property="og:image" content='https://blog.folo.info/favicon.ico' />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@foloinfo" />
+      </Head>
+      <h1>{title}</h1>
+      <DateLabel datetime={data.post.date} />
+      <article>
+        <div>
+          <TinaMarkdown content={content} />
+        </div>
+      </article>
     </Layout>
   );
 }
