@@ -1,11 +1,11 @@
 ---
-title: Converting HTML to Markdown using Google Spreadsheet with fastAPI
+title: Converting HTML to Markdown using Google Spreadsheet with RapidAPI
 date: '2023-03-06T15:00:00.000Z'
 ---
 
 I needed to convert large amount of HTML strings into markdown.
 
-You will need to sign up for FastAPI, but you can use this endpoint for free (at least at this point)
+You will need to sign up for RapidAPI, but you can use this endpoint for free (at least at this point)
 
 Create an AppScript project for the sheet and add the function below.
 
