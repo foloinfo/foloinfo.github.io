@@ -5,6 +5,8 @@ import { client } from "../.tina/__generated__/client";
 import PostLinks from '../components/posts/Links'
 import Head from 'next/head'
 
+const description = 'blog @foloinfo - a blog about web development, programming, and other things'
+
 export default function Home(props) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
   const { data } = useTina({
@@ -23,8 +25,11 @@ export default function Home(props) {
   return (
     <Layout>
       <Head>
-        <title>folo.info</title>
-        <meta name="description" content="folo.info blog" />
+        <title>blog.folo.info</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content='blog.folo.info' />
+        <meta property="og:description" content={descirption} />
+        <meta property="og:image" content='https://blog.folo.info/favicon.ico' />
       </Head>
       <TinaMarkdown content={content} />
       <PostLinks posts={postData.postConnection.edges} />

@@ -25,6 +25,7 @@ export default function Home(props) {
         <meta name="description" content={`${title} --- ${firstBlock}`} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={firstBlock} />
+        <meta property="og:image" content='https://blog.folo.info/favicon.ico' />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:creator" content="@foloinfo" />
       </Head>
