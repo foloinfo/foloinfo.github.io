@@ -1,7 +1,7 @@
 import { Layout } from "../../components/Layout";
-import Link from "next/link";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../../.tina/__generated__/client";
+import PostLinks from "../../components/posts/Links";
 
 export default function PostList(props) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
@@ -10,19 +10,13 @@ export default function PostList(props) {
     variables: props.variables,
     data: props.data,
   });
+
   const postsList = data.postConnection.edges;
+
   return (
     <Layout>
       <h1>Posts</h1>
-      <div>
-        {postsList.map((post) => (
-          <div key={post.node.id}>
-            <Link href={`/posts/${post.node._sys.filename}`}>
-              <a>{post.node._sys.filename}</a>
-            </Link>
-          </div>
-        ))}
-      </div>
+      <PostLinks posts={postsList} />
     </Layout>
   );
 }
