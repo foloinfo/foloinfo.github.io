@@ -29,7 +29,7 @@ export default function Home(props) {
         <meta name="description" content={description} />
         <meta property="og:title" content='blog.folo.info' />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content='https://blog.folo.info/favicon.ico' />
+        <meta property="og:image" content='https://blog.folo.info/git.png' />
       </Head>
       <TinaMarkdown content={content} />
       <PostLinks posts={postData.postConnection.edges} />
