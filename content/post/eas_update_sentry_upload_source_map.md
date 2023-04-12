@@ -1,19 +1,19 @@
 ---
 title: Uploading source map after updating with EAS (Expo)
-date: '2023-03-12T15:00:00.000Z'
+date: '2023-04-11T15:00:00.000Z'
 ---
 
-`sentry-expo` used to upload sourcemap automatically to sentry, but the upload function (postPublish hook) has stopped.
+`sentry-expo` used to automatically upload the sourcemap to sentry, but the upload function (postPublish hook) has stopped.
 
-It looks like there is some bug: https://github.com/expo/sentry-expo/issues/320
+Looks like there is a bug: [https://github.com/expo/sentry-expo/issues/320](https://github.com/expo/sentry-expo/issues/320 "https://github.com/expo/sentry-expo/issues/320")
 
-I needed to upload the sourcemap otherwise Sentry will not show the correct location of the error.
+I needed to upload the sourcemap, otherwise Sentry will not show the correct location of the bug.
 
-This is the shell script to update using eas and upload sourcemap to sentry.  
-I use multiple channels depending on the environment (production, staging).  
-You need to change the detail to match your project and need, but it will give you an idea on how to upload.
+This is the shell script to update with eas and upload the sourcemap to sentry.\
+I use several channels depending on the environment (production, staging).\
+You will need to change the details to suit your project and needs, but it will give you an idea of how to upload.
 
-```bash
+```shell
 #!/bin/bash +x
 
 ENV=$1
@@ -100,9 +100,9 @@ node_modules/@sentry/cli/bin/sentry-cli releases --org $sentry_org --project $pr
 
 Running this script will
 
-1. Upload source using eas update
-2. Upload sourcemap to Sentry
+1. Upload the source using eas-update
+2. Upload sourcemap to sentry
 
-This is annoying to have this kind of script just to use sentry, so I hope they fix it soon.
+It is annoying to have this kind of script just to use Sentry, so I hope they fix it soon.
 
 You could also use this method if you don't use Expo's EAS update and host your own source.
