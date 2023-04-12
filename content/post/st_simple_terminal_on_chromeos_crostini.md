@@ -76,3 +76,15 @@ I would recommend cloning from the original repository first.
 Now I feel much faster terminal on my mobile workspace. Like switching the tmux screen within a few ms.
 
 Happy coding! 🎉
+
+-----
+
+Added@2023-03-22
+
+I noticed it crashes when tring to display some emoji (like 🤖)
+
+The bug seems to be originated from Xft not st, you may recompile with fixed version.
+
+I didn't have time so I installed `sudo apt install fonts-symbola` and it's not crashing.
+
+ref: [ST keeps crashing when displaying emojis : suckless](https://www.reddit.com/r/suckless/comments/k5k4sm/st_keeps_crashing_when_displaying_emojis/)
