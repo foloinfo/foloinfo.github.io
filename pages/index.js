@@ -42,7 +42,9 @@ export const getStaticProps = async () => {
     relativePath: "home.mdx",
   });
 
-  const postConnection = await client.queries.postConnection();
+  const postConnection = await client.queries.postConnection({
+    sort: "date", last: 100
+  });
 
   return {
     props: {
